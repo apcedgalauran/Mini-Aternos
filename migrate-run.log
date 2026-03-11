@@ -17,3 +17,73 @@ PSRemotingProtocolVersion: 2.3
 SerializationVersion: 1.1.0.1
 **********************
 Transcript started, output file is migrate-run.log
+
+-- Safety checks --
+Found nested git repo at frontend/.git (expected).
+
+About to:
+- Copy 'frontend' -> 'frontend.local'
+- Rename 'frontend' -> 'frontend.tmp' to allow subtree import
+- Init root repo (if needed), add remote https://github.com/apcedgalauran/frontend.git and run git subtree add
+- Copy any local changes back from 'frontend.local' into 'frontend' and commit
+- Optionally push to remote:
+
+Backing up frontend...
+Rename-Item : Access to the path 'C:\Users\Ezekiel\Documents\code\Mini Aternos\frontend' is denied.
+At C:\Users\Ezekiel\Documents\code\Mini Aternos\migrate-frontend-to-monorepo.ps1:48 char:1
++ Rename-Item -Path $FRONTEND_DIR -NewName $TMP_DIR
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\Users\Ezekie...ternos\frontend:String) [Rename-Item], IOException
+    + FullyQualifiedErrorId : RenameItemIOError,Microsoft.PowerShell.Commands.RenameItemCommand
+Rename-Item : Access to the path 'C:\Users\Ezekiel\Documents\code\Mini Aternos\frontend' is denied.
+At C:\Users\Ezekiel\Documents\code\Mini Aternos\migrate-frontend-to-monorepo.ps1:48 char:1
++ Rename-Item -Path $FRONTEND_DIR -NewName $TMP_DIR
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\Users\Ezekie...ternos\frontend:String) [Rename-Item], IOException
+    + FullyQualifiedErrorId : RenameItemIOError,Microsoft.PowerShell.Commands.RenameItemCommand
+
+git.exe : fatal: not a git repository (or any of the parent directories): .git
+At C:\Users\Ezekiel\Documents\code\Mini Aternos\migrate-frontend-to-monorepo.ps1:51 char:16
++ $rootIsRepo = (& git rev-parse --is-inside-work-tree) 2>$null
++                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: not a gi...ectories): .git:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+Initializing root git repository...
+
+
+
+
+Adding remote for frontend and fetching...
+git : error: No such remote: 'frontend-remote'
+At C:\Users\Ezekiel\Documents\code\Mini Aternos\migrate-frontend-to-monorepo.ps1:67 char:1
++ git remote remove frontend-remote 2>$null
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: No such remote: 'frontend-remote':String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+
+
+Detected frontend branch: master
+
+Importing frontend history into subdirectory 'frontend' via git subtree...
+
+C:\Users\Ezekiel\Documents\code\Mini Aternos\migrate-frontend-to-monorepo.ps1 : git subtree add failed. Restore state 
+from 'frontend.local' and retry. Aborting.
+At line:5 char:1
++ .\migrate-frontend-to-monorepo.ps1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,migrate-frontend-to-monorepo.ps1
+C:\Users\Ezekiel\Documents\code\Mini Aternos\migrate-frontend-to-monorepo.ps1 : git subtree add failed. Restore state from 'frontend.local' and retry.
+Aborting.
+At line:5 char:1
++ .\migrate-frontend-to-monorepo.ps1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,migrate-frontend-to-monorepo.ps1
+
+**********************
+Windows PowerShell transcript end
+End time: 20260312011903
+**********************
