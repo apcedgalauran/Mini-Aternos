@@ -24,7 +24,7 @@ Found nested git repo at frontend/.git (expected).
 About to:
 - Copy 'frontend' -> 'frontend.local'
 - Rename 'frontend' -> 'frontend.tmp' to allow subtree import
-- Init root repo (if needed), add remote https://github.com/apcedgalauran/frontend.git and run git subtree add
+- Init root repo (if needed), add remote https://github.com/apcedgalauran/Mini-Aternos.git and run git subtree add
 - Copy any local changes back from 'frontend.local' into 'frontend' and commit
 - Optionally push to remote:
 

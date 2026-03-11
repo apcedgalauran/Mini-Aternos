@@ -4,7 +4,7 @@
 $FRONTEND_DIR = "frontend"
 $BACKUP_DIR = "frontend.local"
 $TMP_DIR = "frontend.tmp"
-$FRONTEND_REMOTE = "https://github.com/apcedgalauran/frontend.git"  # existing frontend repo
+$FRONTEND_REMOTE = "https://github.com/apcedgalauran/Mini-Aternos.git"  # existing frontend repo (updated)
 $NEW_REMOTE = Read-Host "Enter new monorepo remote URL (or leave blank to skip push)"
 
 Write-Host "`n-- Safety checks --`n"
