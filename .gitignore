@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.next/
+dist/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Build
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Planning files (keep for dev, ignore in prod)
+# task_plan.md
+# findings.md
+# progress.md
+
+# Design system generated files
+design-system/
